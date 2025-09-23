@@ -1,1 +1,1 @@
-This is a back end course to learn postgre DB
+This is a back end course to learn postgre DB.
