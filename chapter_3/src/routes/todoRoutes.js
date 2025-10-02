@@ -5,7 +5,9 @@ const router = express.Router();
 
 //Get all todos for a user
 router.get("/", (req, res) => {
-  res.send("Get all todos");
+  const getTodos = db.prepare("SELECT * FROM todos WHERE user_id = ?");
+  const todos = getTodos.all(req.userId); // Assuming req.userId is set after authentication
+  res.json(todos);
 });
 
 // Create a new todo
