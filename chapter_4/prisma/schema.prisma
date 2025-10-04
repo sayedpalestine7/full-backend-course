@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -27,5 +26,5 @@ model Todo{
   task      String
   completed Boolean   @default(false)
   userId    Int
-  user     User       relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
 }
